@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Button, Modal, ModalHeader, ModalBody,
     Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import '../App.css'
 //import { Jumbotron } from 'react-bootstrap';                    <NavbarBrand className="mr-auto" href="/"><img src='assets/images/logo.png' height="30" width="41" alt='Ristorante Con Fusion' /></NavbarBrand>
+
+
 
 class Header extends React.Component {
 
@@ -64,9 +67,11 @@ class Header extends React.Component {
                                     <NavLink className="nav-link" to='/contactus'><span className="fa fa-address-card fa-lg"></span> Contact Us</NavLink>
                                 </NavItem>                                
                             </Nav>
-<Nav className="ml-auto" navbar>
-                                <NavItem>
-                                    <Button outline onClick={this.toggleModal} color="primary"><span className="fa fa-sign-in fa-lg"></span> Login</Button>
+<Nav className="ms-auto" navbar>
+                                <NavItem >
+ 
+                                        <Button outline onClick={this.toggleModal}  color="primary" ><span className="fa fa-sign-in fa-lg"></span> Login</Button>
+ 
                                 </NavItem>
                             </Nav>
                         </Collapse>
@@ -77,8 +82,11 @@ class Header extends React.Component {
                     <h1>Ristorante Con Fusion</h1>
 <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>             
                 </div>
-                <Modal>
-                    <ModalHeader>Login</ModalHeader>
+ 
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}  >
+                    
+                    <ModalHeader toggle={this.toggleModal} >Login</ModalHeader>
+
                     <ModalBody>
                         <Form onSubmit={this.handleLogin}>
                             <FormGroup>
