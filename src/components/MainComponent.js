@@ -13,7 +13,7 @@ import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import Contact from './ContactComponent';
 import About from './AboutUsComponent';
-import { Switch, Route, Redirect } from 'react-router-dom';
+
 
 class Main extends React.Component {
 
@@ -35,18 +35,11 @@ class Main extends React.Component {
 //      ,selectedDish: null
 //  }
 
-    
+        
 
   render() {
 
-     const mapStateToProps = state => {
-      return {
-        dishes: state.dishes,
-        comments: state.comments,
-        promotions: state.promotions,
-        leaders: state.leaders
-      }
-    }
+
 
     const HomePage = () => {
       return(
@@ -84,5 +77,13 @@ class Main extends React.Component {
 
  }
 
-
+const mapStateToProps = (state) => {
+      return {
+        dishes: state.dishes,
+        comments: state.comments,
+        promotions: state.promotions,
+        leaders: state.leaders
+      }
+    } 
 export default withRouter(connect(mapStateToProps)(Main));
+//export default withRouter(connect(mapStateToProps)(Main));

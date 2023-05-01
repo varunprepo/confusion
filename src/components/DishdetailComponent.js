@@ -2,7 +2,7 @@ import React from 'react'
 import { Card,CardImg,CardBody,CardImgOverlay,CardText,CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 //import DishDetail from './DishdetailComponent';                   <Link to={`/menu/${dish.id}`} >
 import { Link } from 'react-router-dom';
-
+    
 
 function RenderComments({comments}){
     if(comments==null){
